@@ -1,0 +1,34 @@
+language: "perl"
+perl:
+  - "5.30"
+  - "5.28"
+  - "5.26"
+  - "5.24"
+
+before_install:
+  - cpanm --quiet --notest Test::Pod::Coverage Devel::Cover::Report::Coveralls
+
+install:
+  - cpanm -v --installdeps --notest .
+
+script:
+  - perl Makefile.PL
+  - make
+  - make install
+  - make test
+  - PERL5OPT=-MDevel::Cover=-coverage,statement,branch,condition,path,subroutine prove -lrsv t
+  - cover
+
+after_success:
+  - cover -report coveralls
+
+branches:
+  only:
+    - master
+
+notifications:
+  recipients:
+    - "p.brovchenko@protonmail.com"
+  email:
+    on_success: change
+    on_failure: always

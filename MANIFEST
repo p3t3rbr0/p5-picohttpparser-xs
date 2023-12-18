@@ -1,0 +1,15 @@
+Changes
+LICENSE
+MANIFEST
+Makefile.PL
+README
+XS.xs
+src/picohttpparser.c
+src/picohttpparser.h
+lib/PicoHttpParser/XS.pm
+t/00base.t
+t/01simple.t
+t/02response.t
+t/03response-error.t
+t/04response-format.t
+t/05too-much.t

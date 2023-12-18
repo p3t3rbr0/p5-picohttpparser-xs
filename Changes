@@ -1,0 +1,6 @@
+Revision history for Perl extension PicoHttpParser::XS.
+
+0.1.0  Wed Nov 27 17:18:34 MSK 2019
+	- created dist by h2xs 1.23 with options
+		-b 5.24.0 -A -n PicoHttpParser::XS --use-xsloader --skip-ppport
+    -
